@@ -3,9 +3,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
+    margin: 5;
     background: linear-gradient(to right, #09203f, #537895);
+text-align:center;
 max-width:100%;
+
+
         /* Modal styles */
         .modal {
             display: none;
@@ -173,10 +176,11 @@ a:hover {
 
         .content {
             margin: 20px;
-            padding: 20px;
+            padding: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
             background-color: #f0f0f0;
+max-width:100%;
         }
         .hidden {
             display: none;
