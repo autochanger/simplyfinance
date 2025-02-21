@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Flows Analysis Calculator</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f4; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            margin: 5px; 
+            padding: 10px; 
+            width: 80%; 
+            font-size: 16px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+        }
+        button {
+            background-color: #4CAF50; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .modal { 
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+        .modal-content { 
+            background-color: #fefefe; 
+            margin: 15% auto; 
+            padding: 20px; 
+            border: 1px solid #888; 
+            width: 80%; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+        .close { 
+            color: #aaa; 
+            float: right; 
+            font-size: 28px; 
+            font-weight: bold; 
+        }
+        .close:hover, .close:focus { 
+            color: black; 
+            text-decoration: none; 
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+<div style="text-align:center;">
+<h1>What is Cash Flow Analysis</h1>
+<section>
+
+<img src="cfa.jpg" style="max-width:80%;">
+</section>
+
+    <div class="container">
+        <h1>Cash Flows Analysis</h1>
+        <button onclick="openCalculator()">Open Cash Flows Calculator</button>
+    </div>
+
+    <div id="calculatorModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Cash Flows Analysis Calculator</h2>
+            <label for="cashFlows">Cash Flows (comma-separated): </label>
+            <input type="text" id="cashFlows" placeholder="Enter cash flows"><br>
+            <label for="discountRate">Discount Rate (%): </label>
+            <input type="number" id="discountRate" placeholder="Enter discount rate"><br>
+            <button onclick="calculateCashFlows()">Calculate</button>
+            <h2 id="result"></h2>
+        </div>
+    </div>
+</div>
+    <script>
+        function openCalculator() {
+            document.getElementById('calculatorModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('calculatorModal').style.display = "none";
+        }
+
+        function calculateCashFlows() {
+            const cashFlows = document.getElementById('cashFlows').value.split(',').map(Number);
+            const discountRate = parseFloat(document.getElementById('discountRate').value) / 100;
+
+            if (cashFlows.some(isNaN) || isNaN(discountRate)) {
+                alert("Please enter valid numbers for all fields.");
+                return;
+            }
+
+            const npv = cashFlows.reduce((acc, cf, i) => acc + cf / Math.pow(1 + discountRate, i + 1), 0);
+
+            document.getElementById('result').innerText = `NPV: ${npv.toFixed(2)}`;
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('calculatorModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

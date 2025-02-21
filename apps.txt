@@ -1,0 +1,16 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang9225{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset1 Segoe UI Symbol;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12 
+
+1. Net Present Value (NPV)
+2. Internal Rate of Return (IRR)
+3. Payback Period
+4. Return on Investment (ROI)
+5. Break-even Analysis
+6. Current Ratio
+7. Quick Ratio (Acid-test Ratio)
+8. Debt-to-Equity Ratio
+9. Earnings Per Share (EPS)
+10.Price-to-Earnings Ratio (P/E Ratio)
+11.Cash Flow Analysis
+12.Capital Budgeting

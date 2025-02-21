@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance of Payment Calculator</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f4; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            margin: 5px; 
+            padding: 10px; 
+            width: 80%; 
+            font-size: 16px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+        }
+        button {
+            background-color: #4CAF50; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .modal { 
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+        .modal-content { 
+            background-color: #fefefe; 
+            margin: 15% auto; 
+            padding: 20px; 
+            border: 1px solid #888; 
+            width: 80%; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+        .close { 
+            color: #aaa; 
+            float: right; 
+            font-size: 28px; 
+            font-weight: bold; 
+        }
+        .close:hover, .close:focus { 
+            color: black; 
+            text-decoration: none; 
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+<div style="text-align:center;">
+<h1>What is Balance Of Payment</h1>
+<section>
+
+<img src="bop.jpg" style="max-width:80%;">
+</section>
+
+    <!-- Button to open the modal -->
+    <button id="openModalBtn">Open Balance of Payment Calculator</button>
+
+    <!-- Modal box -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Balance of Payment Calculator</h2>
+            <!-- Calculator form -->
+            <form id="bopCalculator">
+                <label for="exports">Exports: </label>
+                <input type="number" id="exports" name="exports"><br><br>
+                <label for="imports">Imports: </label>
+                <input type="number" id="imports" name="imports"><br><br>
+                <label for="netIncome">Net Income from Abroad: </label>
+                <input type="number" id="netIncome" name="netIncome"><br><br>
+                <label for="netCurrentTransfers">Net Current Transfers: </label>
+                <input type="number" id="netCurrentTransfers" name="netCurrentTransfers"><br><br>
+                <button type="button" onclick="calculateBOP()">Calculate</button>
+            </form>
+            <p id="result"></p>
+        </div>
+    </div>
+</div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModalBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Function to calculate the Balance of Payments
+        function calculateBOP() {
+            var exports = document.getElementById("exports").value;
+            var imports = document.getElementById("imports").value;
+            var netIncome = document.getElementById("netIncome").value;
+            var netCurrentTransfers = document.getElementById("netCurrentTransfers").value;
+
+            var balanceOfPayments = (parseFloat(exports) - parseFloat(imports)) + parseFloat(netIncome) + parseFloat(netCurrentTransfers);
+
+            document.getElementById("result").innerText = "Balance of Payments: " + balanceOfPayments;
+        }
+    </script>
+</body>
+</html>

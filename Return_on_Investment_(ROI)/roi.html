@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROI Calculator Modal</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f4; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            margin: 5px; 
+            padding: 10px; 
+            width: 80%; 
+            font-size: 16px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+        }
+        button {
+            background-color: #4CAF50; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .modal { 
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+        .modal-content { 
+            background-color: #fefefe; 
+            margin: 15% auto; 
+            padding: 20px; 
+            border: 1px solid #888; 
+            width: 80%; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+        .close { 
+            color: #aaa; 
+            float: right; 
+            font-size: 28px; 
+            font-weight: bold; 
+        }
+        .close:hover, .close:focus { 
+            color: black; 
+            text-decoration: none; 
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+
+
+<div style="text-align:center;">
+<h1>What is Return On Investment</h1>
+<section>
+
+<img src="roi.jpg" style="max-width:100%;">
+</section>
+<!-- Button to open the modal -->
+<button id="openModalBtn">Open ROI Calculator</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Return on Investment (ROI) Calculator</h2>
+    <form id="roiForm">
+        <label for="initialInvestment">Initial Investment ($):</label>
+        <input type="number" id="initialInvestment" name="initialInvestment" required><br><br>
+        <label for="expectedReturn">Expected Return ($):</label>
+        <input type="number" id="expectedReturn" name="expectedReturn" required><br><br>
+        <label for="investmentDuration">Investment Duration (years):</label>
+        <input type="number" id="investmentDuration" name="investmentDuration" required><br><br>
+        <button type="button" onclick="calculateROI()">Calculate ROI</button>
+    </form>
+    <div id="result" style="margin-top:20px;"></div>
+  </div>
+</div>
+</div>
+
+<script>
+// Get modal element and button
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("openModalBtn");
+var span = document.getElementsByClassName("close")[0];
+
+// Open the modal on button click
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// Close the modal on (x) click
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Close the modal on outside click
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Calculate ROI function
+function calculateROI() {
+    var initialInvestment = document.getElementById('initialInvestment').value;
+    var expectedReturn = document.getElementById('expectedReturn').value;
+    var investmentDuration = document.getElementById('investmentDuration').value;
+
+    if (initialInvestment && expectedReturn && investmentDuration) {
+        var roi = ((expectedReturn - initialInvestment) / initialInvestment) * 100;
+        var annualizedROI = (Math.pow((expectedReturn / initialInvestment), (1 / investmentDuration)) - 1) * 100;
+        
+        document.getElementById('result').innerHTML = "Total ROI: " + roi.toFixed(2) + "%<br>Annualized ROI: " + annualizedROI.toFixed(2) + "%";
+    } else {
+        document.getElementById('result').innerHTML = "Please fill in all fields.";
+    }
+}
+</script>
+
+</body>
+</html>

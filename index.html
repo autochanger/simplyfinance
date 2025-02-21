@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Management</title>
+ <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            padding: 10px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+        .search-bar input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .search-bar button {
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .content {
+            margin: 20px;
+        }
+        .item {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+    <img src="cover1.jpeg" alt="Header Image">
+    <div class="header-text"> <h1>FINANCIAL MANGEMENT</h1>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search...">
+        <button onclick="searchItems()">Search</button>
+    </div></div>
+       
+    </header>
+
+
+<div class="content" id="content">
+<p>Calculations with ease</p>
+    <div class="thumbnail-container" id="content">
+        <a href="v2/with button/index.html" target="" class="item"><img src="img1.jpg" alt="Image 1" class="thumbnail"><br class="search-item">Calculate Amortization</a>
+        <a href="bop/bop.html" target="" class="item"><img src="img1.jpg" alt="Image 2" class="thumbnail"><br class="search-item">Calculate Balance Of Payment</a>
+        <a href="bea/bea.html" target="" class="item"><img src="img1.jpg" alt="Image 3" class="thumbnail"><br class="search-item">Calculate Break Even Analysis</a>
+    </div>
+
+
+
+<div class="content" id="content">
+    <div class="thumbnail-container" id="content">
+        <a href="Capital_Budgeting/cb.html" target="" class="item"><img src="img1.jpg" alt="Image 1" class="thumbnail"><br>Calculate Capital Budgeting</a>
+        <a href="Cash_Flow_Analysis/cfa.html" target="" class="item"><img src="img1.jpg" alt="Image 2" class="thumbnail"><br>Calculate Cash Flow Analysis</a>
+        <a href="Compound_interest/ci.html" target="" class="item"><img src="img1.jpg" alt="Image 3" class="thumbnail"><br>Calculate Compound Interest</a>
+    </div>
+</div>
+
+<div style="text-align:center;"><b>PREMIUM USERS</b> - FREE TRIAL - : Request access</div>
+<div class="message hidden" id="message">
+
+    <div class="thumbnail-container" id="content">
+        <a href="Current_Ratio/cr.html" target="" class="item"><img src="img1.jpg" alt="Image 1" class="thumbnail"><br>Calculate Balance Current Ratio</a>
+        <a href="Debt-to-Equity_Ratio/der.html" target="" class="item"><img src="img1.jpg" alt="Image 2" class="thumbnail"><br>Calculate Debt to Equity ratio</a>
+        <a href="Earnings_Per_Share_(EPS)/eps.html" target="" class="item"><img src="img1.jpg" alt="Image 3" class="thumbnail"><br>Calculate Earnings Per Share</a>
+    </div>
+
+    <div class="thumbnail-container" id="content">
+        <a href="Interest_rate/ir.html" target=""><img src="img1.jpg" alt="Image 1" class="thumbnail"><br>Calculate Interest Rates</a>
+        <a href="Internal_Rate_of_Return_(IRR)/irr.html" target=""><img src="img1.jpg" alt="Image 2" class="thumbnail"><br>Calculate Internal Rate Of Return</a>
+        <a href="Net_Present_Value_(NPV)/npv.html" target=""><img src="img1.jpg" alt="Image 3" class="thumbnail"><br>Calculate Net Present Value</a>
+    </div>
+
+
+<div class="blurred-section">
+    <div class="thumbnail-container" id="content">
+        <a href="Payback_Period/pp.html" target="" class="item"><img src="img1.jpg" alt="Image 1" class="thumbnail"><br>Calculate Balance Payback Period</a>
+        <a href="Profitabilty_index/pi.html" target="" class="item"><img src="img1.jpg" alt="Image 2" class="thumbnail"><br>Calculate Profitability Index</a>
+        <a href="Quick_Ratio_(Acid-test Ratio)/qrt.html" target="" class="item"><img src="img1.jpg" alt="Image 3" class="thumbnail"><br>Calculate Quick Ratio</a>
+    </div>
+
+
+    <div class="thumbnail-container" id="content">
+        <a href="Return_on_Investment_(ROI)/roi.html" target="" class="item"><img src="img1.jpg" alt="Image 1" class="thumbnail"><br>Calculate Return On Investment</a>
+        <a href="Simple_interest/si.html" target="" class="item"><img src="img1.jpg" alt="Image 2" class="thumbnail"><br>Calculate Simple Interest</a>
+        <a href="apps.txt" target="" class="item"><img src="img1.jpg" alt="Image 3" class="thumbnail"><br>View App list</a>
+    </div>
+</div>
+
+</div>
+
+
+<button id="open-modal">About the developers</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <p>Computer engineer with years of experience. He Graduated with a Bachelors degree in Banking and Finance 
+and letter pursuit a Technology career. Like always he felt stressed each time he made calculations. 
+<br>To solve the stress problem he decided that rather than the long calculations, why don't he create an app for that.
+It was at that moment that the app was developed and later destributed for public use.
+
+<p>The app is a simple to use app that offers many Financial Calculations , to better aid clients, The app comes with descriptions on each topic.</p>
+</p>
+<br> The app is used in Investment decisions
+<li> Reports and analysis</li>
+<li> Budgeting</li>
+<li> Educational purposes</li>
+    </div>
+</div>
+
+
+<!-- Elfsight All-in-One Chat | Cloud Consultation -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-426a6b57-6878-4cba-8e38-65db843b1177" data-elfsight-app-lazy></div>
+
+<script>
+    // Get the modal and elements
+    const modal = document.getElementById('myModal');
+    const openModalBtn = document.getElementById('open-modal');
+    const closeModalBtn = document.getElementById('close-modal');
+
+    // Open the modal
+    openModalBtn.onclick = function() {
+        modal.style.display = 'block';
+    }
+
+    // Close the modal
+    closeModalBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
+<script>
+    function searchItems() {
+        const query = document.getElementById('search-input').value.toLowerCase();
+        const items = document.querySelectorAll('.item');
+        
+        items.forEach(item => {
+            item.classList.remove('highlight');
+            if (item.textContent.toLowerCase().includes(query)) {
+                item.classList.add('highlight');
+            }
+        });
+    }
+</script>
+
+    <script>
+        // Register the Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+            .then(() => console.log('Service Worker registered'))
+            .catch(error => console.log('Service Worker registration failed:', error));
+        }
+    </script>
+
+
+</body>
+</html>

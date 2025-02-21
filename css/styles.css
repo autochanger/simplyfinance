@@ -1,0 +1,205 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    background: linear-gradient(to right, #09203f, #537895);
+max-width:100%;
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+}
+
+
+
+header {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+background: linear-gradient(to right, #12cbc4, #c4e538);
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	position: relative;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+
+        header img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .header-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            background-color: rgba(0, 0, 0, 0.5); /* Optional background for better readability */
+            padding: 10px;
+            border-radius: 5px;
+
+        }
+
+
+
+h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+max-width:100%;
+
+}
+
+.thumbnail {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid transparent;
+    border-radius: 10px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+max-width:100%;
+
+}
+
+.thumbnail:hover {
+    border-color: grey;
+    transform: scale(1.05);
+}
+
+
+/* Basic text styling */
+p {
+    color: #333; /* Font color */
+    font-size: 16px; /* Font size */
+    font-family: Arial, sans-serif; /* Font family */
+    line-height: 1.5; /* Line height */
+}
+
+/* Heading styles */
+h1 {
+    color: white ;
+    font-size: 36px;
+    font-weight: bold; /* Font weight */
+    text-transform: uppercase; /* Text transformation */
+    text-align: center; /* Text alignment */
+}
+
+h2 {
+    color: #8e44ad;
+    font-size: 30px;
+    font-style: italic; /* Font style */
+}
+
+/* Link styles */
+a {
+    color: fancyblue;
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Special class for highlighted text */
+.highlight {
+    background-color: yellow; /* Background color */
+    color: red;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/* Different font style example */
+.fancy {
+    font-family: 'Georgia', serif; /* Change font family */
+    color: #e74c3c;
+    font-size: 20px;
+    text-shadow: 1px 1px 2px #000; /* Text shadow */
+}
+
+/* Class for small text */
+.small-text {
+    font-size: 12px;
+    color: #555;
+}
+
+     
+
+
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 4px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+
+
+        .content {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+        }
+        .hidden {
+            display: none;
+        }
+        .message {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid blue;
+            border-radius: 4px;
+            background-color: #e0f7ff;
+            color: ;}
+
+
+        .blurred-section {
+            filter: blur(5px);
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+            transition: filter 0.3s ease;
+        }
+        .blurred-section.clear {
+            filter: none;
+        }
